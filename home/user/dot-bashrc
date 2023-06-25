@@ -1,0 +1,20 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# include local ~/.local/bin in $PATH
+export PATH=~/.local/bin:$PATH
+
+# command aliases
+alias ls='ls -F --color=auto'
+alias ll='ls -lh'
+alias rm='rm -I'
+alias grep='grep --color'
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
+# shell prompt
+export PS1='[\[\e[01;32m\]\u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00m\]]\$ '
