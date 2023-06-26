@@ -1,0 +1,30 @@
+" This is already set in the global Arch Linux default
+" set nocompatible
+
+" Get the system-wide defaults.
+source $VIMRUNTIME/defaults.vim
+
+set bg=dark
+set mouse=a
+
+" Tabs are 4 spaces
+set tabstop=4
+
+" Shift-Tabs are 4 spaces
+set shiftwidth=4
+
+" <Tab> counts for 4 spaces when inserting <Tab> or using <BS>
+set softtabstop=4
+
+" Use spaces, not tabs
+set expandtab
+
+" Show line numbers
+set number
+
+" Autoindent
+set autoindent
+set smartindent
+
+" Search behavior
+set hlsearch
