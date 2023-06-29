@@ -9,3 +9,5 @@ Depending on your use case, you may want to turn this on to help improve the per
 * To enable resuming from hibernate, make sure the `resume` hook is in the list of `HOOKS` in your mkinitcpio configuration.
 
 * Tweaks to your `.bashrc` and `.vimrc`
+
+* `NetworkManager` sometimes exhibits inconsistent behavior when renewing a DHCP lease. The `/etc/NetworkManager/conf.d/dhcp-client.conf` file tells NetworkManager to use a different DHCP client instead of the native, built-in one.
