@@ -18,3 +18,24 @@ alias pbpaste='xclip -selection clipboard -o'
 
 # shell prompt
 export PS1='[\[\e[01;32m\]\u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00m\]]\$ '
+
+# User Defined Functions
+
+# This shouldn't really be necessary, but I've typoed 'kinit' way too many.
+# This helps shooting myself in the foot.
+init()
+{
+    echo "Did you mean to execute \`init\`? If so, execute it via the full path."
+    echo "Hint: `which init`";
+}
+
+# For using GDB
+disable_ptrace_protection()
+{
+    echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+}
+
+enable_ptrace_protection()
+{
+    echo 1 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+}
