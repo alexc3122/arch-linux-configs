@@ -1,0 +1,7 @@
+[Match]
+Name=enp0s25
+Virtualization=False
+
+[Network]
+DHCP=yes
+IPv6PrivacyExtensions=true
