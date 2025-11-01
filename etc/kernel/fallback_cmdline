@@ -1,0 +1,1 @@
+cryptdevice=UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:cryptlvm:allow-discards root=/dev/lvgroup0/root rw add_efi_memmap systemd.unit=multi-user.target
