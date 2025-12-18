@@ -5,7 +5,7 @@ This repository is a small collection of my user and system configuration files 
 Some notable configuration tidbits here:
 
 * By default, the TRIM command isn't configured to run on Arch Linux for SSDs/NVMe drives. 
-  Additionally, if you leverage LUKS to encrypt your root file system, you may need to add the appropriate kernel flags on boot to enable TRIM. Depending on your use case, you may want to turn this on to help improve the performance of your SSD/NVMe drive. To enable TRIM on a system using LUKS and where the the `encrypt` hook is used, you'll need to add the `:allow-discards` to the UUID specifier.
+  Additionally, if you leverage LUKS to encrypt your root file system, you may need to add the appropriate kernel flags on boot to enable TRIM. Depending on your use case, you may want to turn this on to help improve the performance of your SSD/NVMe drive. To enable TRIM on a system using LUKS and where the the `encrypt` hook is used, you'll need to add the `:allow-discards` to the UUID specifier when using the older `encrypt` hook. If you're using the `sd-encrypt` hook, you can instead specifiy it using an `rd.luks.options` kernel parameter. Alternative, you can specify it in the `/etc/crypttab.initramfs`.
 
   This page on the Arch Linux wiki describes which flags and where precisely:
   https://wiki.archlinux.org/title/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD)
@@ -36,3 +36,5 @@ Some other special things to note:
    * https://forum.endeavouros.com/t/bootctl-install-outputs-some-warnings-about-efi-mount-point-and-random-seed-file-in-the-terminal/43991/2
 
 * As is evident, rEFInd was previously used on some of my systems. I've since migrated to using Unified Kernel Images with Secure Boot. I've left the rEFInd configuration largely for posterity.
+
+* I have migrated to using `systemd` and `sd-encrypt` in the initramfs creation stage. Do not use some of these configuration verbatim as I've left the older `encrypt` hook creation steps for posterity (as well as for instructional purposes). 

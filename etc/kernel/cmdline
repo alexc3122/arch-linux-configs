@@ -1,1 +1,8 @@
+
+# used when the `encrypt` hook is used in mkinitcpio
+# this has largely been superceded by using the `sd-encrypt` hook
 cryptdevice=UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:cryptlvm:allow-discards root=/dev/lvgroup0/root lsm=landlock,lockdown,yama,integrity,apparmor,bpf rw add_efi_memmap quiet
+
+# used with the `sd-encrypt` hook is used and a `/etc/crypttab.initramfs` file 
+# is defined to unlock the LVM on LUKS volume
+root=/dev/lvgroup0/root lsm=landlock,lockdown,yama,integrity,apparmor,bpf rw add_efi_memmap quiet
